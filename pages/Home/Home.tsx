@@ -1,19 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
-import { s } from './Home.style';
+import { s } from "./Home.style";
+
+import Txt from "../../components/Txt/Txt";
 
 const Home = () => {
   return (
     <>
       <View style={s.meteo_basic}>
-        <Text style={s.text}>Basic Weather Info</Text>
+        <Txt>Basic Weather Info</Txt>
       </View>
       <View style={s.searchbar_container}>
-        <Text style={s.text}>SearchBar</Text>
+        <Txt>SearchBar</Txt>
       </View>
       <View style={s.meteo_advanced}>
-        <Text style={s.text}>Advance weather info</Text>
+        <Txt>Advance weather info</Txt>
       </View>
     </>
   );
