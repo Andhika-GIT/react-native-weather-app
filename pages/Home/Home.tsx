@@ -10,6 +10,7 @@ import { HomeProps } from './types';
 import Txt from '../../components/Txt/Txt';
 import MeteoBasic from '../../components/MeteoBasic/MeteoBasic';
 import { getWeatherInterpretation } from '../../utils/meteo-utils';
+import MeteoAdvanced from '../../components/MeteoAdvanced/MeteoAdvanced';
 
 const Home: React.FC<HomeProps> = ({ weather, city }) => {
   const currentWeather = Math.round(weather?.current_weather?.temperature);
@@ -24,7 +25,7 @@ const Home: React.FC<HomeProps> = ({ weather, city }) => {
         <Txt>SearchBar</Txt>
       </View>
       <View style={s.meteo_advanced}>
-        <Txt>Advance weather info</Txt>
+        <MeteoAdvanced />
       </View>
     </View>
   );

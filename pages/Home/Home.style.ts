@@ -10,7 +10,7 @@ export const s = StyleSheet.create({
     flex: 2,
   },
   searchbar_container: {
-    flex: 2,
+    flex: 1,
   },
-  meteo_advanced: { flex: 1 },
+  meteo_advanced: { flex: 2 },
 });
