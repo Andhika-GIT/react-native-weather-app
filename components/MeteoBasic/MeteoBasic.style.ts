@@ -14,6 +14,9 @@ export const s = StyleSheet.create({
       },
     ],
   },
+  interpretation_txt: {
+    fontSize: 20,
+  },
   temperature_box: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -23,8 +26,7 @@ export const s = StyleSheet.create({
     fontSize: 100,
   },
   image: {
-    height: 50,
-    width: 50,
-    backgroundColor: 'white',
+    height: 70,
+    width: 70,
   },
 });

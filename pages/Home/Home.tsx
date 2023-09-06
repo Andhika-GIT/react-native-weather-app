@@ -9,14 +9,16 @@ import { HomeProps } from './types';
 // components
 import Txt from '../../components/Txt/Txt';
 import MeteoBasic from '../../components/MeteoBasic/MeteoBasic';
+import { getWeatherInterpretation } from '../../utils/meteo-utils';
 
 const Home: React.FC<HomeProps> = ({ weather }) => {
   const currentWeather = Math.round(weather?.current_weather?.temperature);
+  const currentInterpretation = getWeatherInterpretation(weather.current_weather.weathercode);
 
   return (
     <View style={s.container}>
       <View style={s.meteo_basic}>
-        <MeteoBasic temperature={currentWeather} />
+        <MeteoBasic interpretation={currentInterpretation} temperature={currentWeather} />
       </View>
       <View style={s.searchbar_container}>
         <Txt>SearchBar</Txt>
