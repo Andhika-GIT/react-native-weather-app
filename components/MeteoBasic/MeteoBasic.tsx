@@ -4,9 +4,12 @@ import React from 'react';
 // componnents
 import Txt from '../Txt/Txt';
 
+// types
+import { MeteoProps } from './types';
+
 import { s } from './MeteoBasic.style';
 
-const MeteoBasic = () => {
+const MeteoBasic: React.FC<MeteoProps> = ({ temperature }) => {
   return (
     <>
       <View style={s.clock}>
@@ -19,7 +22,7 @@ const MeteoBasic = () => {
         <Txt>Sunny</Txt>
       </View>
       <View style={s.temperature_box}>
-        <Txt style={s.temperature}>3</Txt>
+        <Txt style={s.temperature}>{temperature}°</Txt>
         <Image style={s.image} />
       </View>
     </>

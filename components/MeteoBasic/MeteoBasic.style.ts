@@ -20,7 +20,7 @@ export const s = StyleSheet.create({
     alignItems: 'baseline',
   },
   temperature: {
-    fontSize: 150,
+    fontSize: 100,
   },
   image: {
     height: 50,

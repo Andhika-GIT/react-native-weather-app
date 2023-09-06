@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface HomeProps {
+export interface MeteoProps {
   children?: ReactNode;
-  weather: any;
+  temperature: number;
 }
