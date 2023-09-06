@@ -10,4 +10,5 @@ export interface MeteoProps {
         image: any;
       }
     | undefined;
+  city: string | null | undefined;
 }

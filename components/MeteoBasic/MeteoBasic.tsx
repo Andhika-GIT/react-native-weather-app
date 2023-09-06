@@ -10,7 +10,7 @@ import { MeteoProps } from './types';
 import { s } from './MeteoBasic.style';
 import Clock from '../Clock/Clock';
 
-const MeteoBasic: React.FC<MeteoProps> = ({ temperature, interpretation }) => {
+const MeteoBasic: React.FC<MeteoProps> = ({ temperature, interpretation, city }) => {
   console.log(interpretation);
   return (
     <>
@@ -19,7 +19,7 @@ const MeteoBasic: React.FC<MeteoProps> = ({ temperature, interpretation }) => {
       </View>
 
       <View style={s.city}>
-        <Txt>City</Txt>
+        <Txt>{city}</Txt>
       </View>
 
       <View style={s.interpretation}>

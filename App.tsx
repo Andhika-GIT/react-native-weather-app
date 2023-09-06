@@ -16,7 +16,7 @@ import backgroundImg from './assets/background.png';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 
 // api func
-import { fetchWeatherByCoordinates } from './api/meteo';
+import { fetchWeatherByCoordinates, fetchCityByCoordinates } from './api/meteo';
 
 // fonts
 import { useFonts } from 'expo-font';
@@ -34,6 +34,7 @@ export default function App() {
   } | null>();
 
   const [weather, setWeather] = useState<any>();
+  const [city, setCity] = useState<string | null | undefined>();
 
   useEffect(() => {
     getUserCoordinates();
@@ -42,6 +43,7 @@ export default function App() {
   useEffect(() => {
     if (coordinates) {
       fetchWeatherFromCoordinates();
+      fetchCityFromCoordinates();
     }
   }, [coordinates]);
 
@@ -64,12 +66,15 @@ export default function App() {
     setWeather(weatherRes);
   };
 
-  console.log(coordinates);
-  console.log(weather);
+  const fetchCityFromCoordinates = async () => {
+    const cityRes = await fetchCityByCoordinates(coordinates);
+    setCity(cityRes);
+  };
+
   return (
     <ImageBackground imageStyle={s.img} style={s.img_background} source={backgroundImg}>
       <SafeAreaProvider>
-        <SafeAreaView style={s.container}>{isFontsLoaded && weather && <Home weather={weather} />}</SafeAreaView>
+        <SafeAreaView style={s.container}>{isFontsLoaded && weather && <Home city={city} weather={weather} />}</SafeAreaView>
       </SafeAreaProvider>
     </ImageBackground>
   );

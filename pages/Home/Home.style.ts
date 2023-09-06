@@ -4,6 +4,7 @@ export const s = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
+    paddingTop: 5,
   },
   meteo_basic: {
     flex: 2,
