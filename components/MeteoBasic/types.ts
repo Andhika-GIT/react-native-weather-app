@@ -11,4 +11,9 @@ export interface MeteoProps {
       }
     | undefined;
   city: string | null | undefined;
+  dailyWeather: {};
 }
+
+export type RootStackParamList = {
+  Forecasts: null | undefined;
+};

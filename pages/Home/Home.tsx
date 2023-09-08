@@ -22,7 +22,7 @@ const Home: React.FC<HomeProps> = ({ weather, city }) => {
   return (
     <View style={s.container}>
       <View style={s.meteo_basic}>
-        <MeteoBasic city={city} interpretation={currentInterpretation} temperature={currentWeather} />
+        <MeteoBasic dailyWeather={weather.daily} city={city} interpretation={currentInterpretation} temperature={currentWeather} />
       </View>
       <View style={s.searchbar_container}>
         <Txt>SearchBar</Txt>

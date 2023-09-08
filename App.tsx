@@ -95,7 +95,7 @@ export default function App() {
         <SafeAreaProvider>
           <SafeAreaView style={s.container}>
             {isFontsLoaded && weather && (
-              <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+              <Stack.Navigator screenOptions={{ headerShown: false, animation: 'fade' }} initialRouteName="Home">
                 <Stack.Screen name="Home">{() => <Home city={city} weather={weather} />}</Stack.Screen>
                 <Stack.Screen name="Forecasts" component={Forecasts} />
               </Stack.Navigator>

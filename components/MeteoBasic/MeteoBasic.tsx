@@ -1,17 +1,21 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
+
+// react-navigation
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 // componnents
 import Txt from '../Txt/Txt';
 
 // types
-import { MeteoProps } from './types';
+import { MeteoProps, RootStackParamList } from './types';
 
 import { s } from './MeteoBasic.style';
 import Clock from '../Clock/Clock';
 
-const MeteoBasic: React.FC<MeteoProps> = ({ temperature, interpretation, city }) => {
-  console.log(interpretation);
+const MeteoBasic: React.FC<MeteoProps> = ({ temperature, interpretation, city, dailyWeather }) => {
+  const nav = useNavigation();
   return (
     <>
       <View style={s.clock}>
@@ -27,7 +31,9 @@ const MeteoBasic: React.FC<MeteoProps> = ({ temperature, interpretation, city })
       </View>
 
       <View style={s.temperature_box}>
-        <Txt style={s.temperature}>{temperature}°</Txt>
+        <TouchableOpacity onPress={() => nav.navigate('Forecasts', { city, ...dailyWeather })}>
+          <Txt style={s.temperature}>{temperature}°</Txt>
+        </TouchableOpacity>
         <Image style={s.image} source={interpretation?.image} />
       </View>
     </>
