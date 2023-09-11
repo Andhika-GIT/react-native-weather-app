@@ -18,7 +18,7 @@ export const s = StyleSheet.create({
     fontSize: 15,
   },
   temperature: {
-    fontSize: 24,
+    fontSize: 20,
     minWidth: 50,
     textAlign: 'right',
   },
