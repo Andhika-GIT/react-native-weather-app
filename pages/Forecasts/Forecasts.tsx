@@ -4,11 +4,15 @@ import Txt from '../../components/Txt/Txt';
 
 // react-navigation
 import { useRoute } from '@react-navigation/native';
+import Header from '../../components/Header/Header';
 
 const Forecasts = () => {
   const { params } = useRoute();
-  console.log(params);
-  return <Txt>Forecasts</Txt>;
+  return (
+    <>
+      <Header city={params?.city} />
+    </>
+  );
 };
 
 export default Forecasts;
