@@ -8,6 +8,8 @@ import { HomeProps } from './types';
 
 // components
 import Txt from '../../components/Txt/Txt';
+import SearchBar from '../../components/SearchBar/SearchBar';
+
 import MeteoBasic from '../../components/MeteoBasic/MeteoBasic';
 import { getWeatherInterpretation } from '../../utils/meteo-utils';
 import MeteoAdvanced from '../../components/MeteoAdvanced/MeteoAdvanced';
@@ -25,7 +27,7 @@ const Home: React.FC<HomeProps> = ({ weather, city }) => {
         <MeteoBasic dailyWeather={weather.daily} city={city} interpretation={currentInterpretation} temperature={currentWeather} />
       </View>
       <View style={s.searchbar_container}>
-        <Txt>SearchBar</Txt>
+        <SearchBar />
       </View>
       <View style={s.meteo_advanced}>
         <MeteoAdvanced windspeed={weather.current_weather.windspeed} sunrise={sunrise} sunset={sunset} />
