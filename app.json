@@ -45,6 +45,12 @@
         "projectId": "8e31fc27-0570-4e9c-b63e-582e378dc158"
       }
     },
-    "owner": "andhika_pn"
+    "owner": "andhika_pn",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8e31fc27-0570-4e9c-b63e-582e378dc158"
+    }
   }
 }

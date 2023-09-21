@@ -65,6 +65,15 @@ export default function App() {
   useEffect(() => {
     getUserCoordinates();
     subscribeToNotifications();
+    // when app is opened and notification is received
+    Notifications.addNotificationReceivedListener((notification) => {
+      console.log(notification.request.content);
+    });
+
+    // when app is in background or killed, and user pressed the notification message
+    Notifications.addNotificationResponseReceivedListener((response) => {
+      console.log(response.notification.request.content);
+    });
   }, []);
 
   useEffect(() => {
